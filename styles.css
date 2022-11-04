@@ -188,6 +188,7 @@ img {
   left: 0;
    background: var(--main-red);
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
+  z-index: 5;
 }
 #navbar{
   display: flex;
@@ -234,7 +235,19 @@ img {
   font-size: 3rem;
   font-weight: 200;
   font-style: italic;
-  color: var(--main-red);
+  color: var(--main-gray);
+  margin-bottom: 35px;
+}
+
+#welcome-content{
+   background-color:rgba(255,255,255,0.2);   
+   padding: 3rem;
+   text-align: center;
+   margin: 0 10px;
+}
+
+ .btn-resume:hover i{
+  transform: translateY(2px) !important;
 }
 
 /*Project section*/
