@@ -80,6 +80,7 @@ body {
   color: var(--main-white);
 }
 
+
 h1,
 h2 {
   font-family: 'Raleway', sans-serif;
@@ -112,20 +113,40 @@ img {
 /*hamberguer menu*/
 #menu{
   display:none;
+  transition: 0.3s;
+}
+#menu:hover{
+  cursor: pointer;
+}
+#btn-close{
+  display: none;
+ font-size: 3rem;
+ transition: 0.3s;
 }
 
-#btn-close{
-  position: absolute;
-  top: 20px;
-  right: 20px;
+#menu.open #btn-close{
+  display: block;
+  position: relative;
+  background: none;
+  border: none;
+  color: var(--main-white);
+  font-size: 3rem;
+  font-weight: 400;
+  z-index: 5;
+  
 }
+
+#menu.open .bar{
+  display: none;
+}
+
 #navbar-mobile {
   position: absolute;
   top: 0;
   right: 0;
   height: 100vh;
   width: 100vw;
-  margin-right: -470px;
+  margin-right: -800px;
   transition:0.5s; 
 }
 
@@ -157,11 +178,17 @@ img {
   background-color: var(--main-white); 
 }
 
-@media (max-width: 28.75em){
+@media only screen and (max-width: 48em){
   #header #navbar{
    display: none;
   }
 
+
+  /* disable scrolling on body on mobile device */
+
+  body.open{
+    overflow: hidden;
+  }
   #menu{    
     display: block;
     margin-right: 2rem;
@@ -172,7 +199,7 @@ img {
   }
   
 }
-@media (min-width: 29em) {
+@media (min-width: 48em) {
  #header #navbar-mobile {
    display:none;
  }
@@ -181,7 +208,7 @@ img {
 /*nav*/
 #header{
   width: 100%;
-  min-height: 70px;
+  min-height: 60px;
    display: flex; 
    /* justify-content: space-around;
    align-items:center; */
@@ -282,6 +309,9 @@ img {
   margin: 6rem auto;
 }
 
+#stacks{
+  margin: 0 6rem;
+}
 .stack h3{
   margin: 1rem auto;
 }
@@ -292,7 +322,13 @@ img {
   padding: 2rem;
   border-radius: 5px;
   text-align: center;
+  transition: transform 0.3s ease-out;
 }
+
+.stack:hover{
+  transform: translateY(-5px);
+}
+
 @media (max-width: 48em){
   #about{
     flex-direction: column;  
@@ -321,6 +357,7 @@ img {
     font-size: 4rem;
   }
 }
+
 .projects-grid, .stacks-grid{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
