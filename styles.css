@@ -247,6 +247,7 @@ img {
 #navbar a:hover {
   background: var(--main-blue);
 }
+
 /* @media (max-width: 28.75em){
   #navbar{
     justify-content: center;
